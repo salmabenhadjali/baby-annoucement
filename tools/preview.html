@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- Outil de dev : affiche l'appli dans plusieurs tailles d'écran.
+     Servez la RACINE du projet puis ouvrez /tools/preview.html
+     Paramètre ?click=0,1,2 : déclenche automatiquement les étapes (pour captures). -->
+<meta charset="utf-8">
+<title>Preview</title>
+<style>body{margin:0;display:flex;gap:24px;padding:24px;background:#888;align-items:flex-start;font:12px system-ui}
+iframe{border:0;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.3)} figure{margin:0} figcaption{color:#fff;margin-bottom:6px}</style>
+<script>
+const sizes=[[375,667,'iPhone SE'],[390,844,'iPhone 14'],[412,915,'Android']];
+const q=new URLSearchParams(location.search);
+const lang=q.get('lang')?'?lang='+q.get('lang'):'';
+const steps=(q.get('click')||'').split(',').filter(Boolean).map(Number);
+const at=Number(q.get('at')||0);
+document.addEventListener('DOMContentLoaded',()=>{
+  for(const [w,h,n] of sizes){
+    const f=document.createElement('figure');f.innerHTML=`<figcaption>${n} ${w}×${h}</figcaption>`;
+    const i=document.createElement('iframe');i.width=w;i.height=h;i.src='../public/index.html'+lang;f.appendChild(i);document.body.appendChild(f);
+    i.onload=()=>{const d=i.contentDocument;
+      if(steps.includes(0))setTimeout(()=>d.getElementById('envButton').click(),300);
+      if(steps.includes(1))setTimeout(()=>d.getElementById('continueBtn').click(),300+at);
+    };
+  }
+});
+</script>

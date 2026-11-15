@@ -1,0 +1,15 @@
+{
+  "name": "annonce-grossesse",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Enveloppe virtuelle interactive — annonce de grossesse",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch-path=middleware.js --watch-path=acces.config.js --watch-path=.env.local --watch-path=tools/dev-server.mjs tools/dev-server.mjs",
+    "preview": "echo 'Ouvrez http://localhost:4173/tools/preview.html' && npx --yes serve@14.2.4 . -l 4173",
+    "optimise-echo": "sips -Z 1400 -s format jpeg -s formatOptions 82 \"$npm_config_src\" --out public/assets/echographie.jpg"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.11.3"
+  }
+}

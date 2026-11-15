@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Génère public/og-image.png (aperçu WhatsApp neutre) :
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+       --window-size=1200,630 --screenshot=og.png tools/og-image.html  puis convertir en public/og-image.jpg            -->
+<meta charset="utf-8">
+<style>
+@font-face{font-family:C;src:url(../public/assets/fonts/cormorant-garamond-latin-500-italic.woff2);font-style:italic}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:radial-gradient(120% 90% at 50% 0%,#FCF8F4,#F5EBE4 55%,#EEDDD3);display:grid;place-items:center}
+.e{position:relative;width:560px;height:358px;margin-top:-30px;filter:drop-shadow(0 30px 34px rgba(92,52,44,.28))}
+.e svg{position:absolute;inset:0;width:100%;height:100%}
+.e svg.seal{inset:auto;position:absolute;width:96px;height:96px;left:232px;top:174px;filter:drop-shadow(0 4px 5px rgba(90,30,40,.35))}
+p{position:absolute;bottom:52px;width:100%;text-align:center;margin:0;font:italic 500 44px C,serif;color:#765A52}
+</style>
+<div class="e">
+ <svg viewBox="0 0 100 64" preserveAspectRatio="none">
+  <defs><linearGradient id="a" x1="0" x2="1"><stop offset="0" stop-color="#E5BDAE"/><stop offset="1" stop-color="#EDCDC0"/></linearGradient>
+  <linearGradient id="b" y1="1" y2="0" x1="0" x2="0"><stop offset="0" stop-color="#E8C4B6"/><stop offset="1" stop-color="#F3DACF"/></linearGradient>
+  <linearGradient id="f" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#F0D3C7"/><stop offset="1" stop-color="#E0B5A6"/></linearGradient></defs>
+  <rect width="100" height="64" rx="1" fill="url(#a)"/>
+  <path d="M0 64 L46 31.5 Q50 29 54 31.5 L100 64 Z" fill="url(#b)"/>
+  <path d="M0 0 H100 L53.2 37.6 Q50 40 46.8 37.6 Z" fill="url(#f)"/>
+ </svg>
+ <svg class="seal" viewBox="0 0 64 64"><defs><radialGradient id="w" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#C0606C"/><stop offset=".6" stop-color="#9A3A48"/><stop offset="1" stop-color="#7A2836"/></radialGradient></defs>
+  <circle cx="32" cy="33" r="29" fill="url(#w)"/><circle cx="32" cy="33" r="19" fill="none" stroke="#6E2230" stroke-opacity=".55" stroke-width="1.4"/>
+  <path d="M32 43.5c-.8-.8-11-7.6-11-14.2 0-3.6 2.8-6 5.8-6 2.2 0 4.1 1.2 5.2 3.1 1.1-1.9 3-3.1 5.2-3.1 3 0 5.8 2.4 5.8 6 0 6.6-10.2 13.4-11 14.2z" fill="#7E2A38"/></svg>
+</div>
+<p>Un petit mot rien que pour vous</p>
